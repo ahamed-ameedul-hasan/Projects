@@ -45,7 +45,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
 :root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
 </style>
-<link rel="stylesheet" id="contact-form-7-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1.1" type="text/css" media="all">
 <link rel="stylesheet" id="trueman-fonts-css" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&amp;display=swap" type="text/css" media="all">
 <link rel="stylesheet" id="bootstrap-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/css/bootstrap.css?ver=6.8.2" type="text/css" media="all">
 <link rel="stylesheet" id="trueman-fontawesome-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/fonts/font-awesome/css/font-awesome.css?ver=6.8.2" type="text/css" media="all">
@@ -54,10 +54,10 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 <link rel="stylesheet" id="trueman-style-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/style.css?ver=6.8.2" type="text/css" media="all">
 <link rel="stylesheet" id="trueman-ui-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/css/ui-dark.css?ver=6.8.2" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-frontend-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.29.2" type="text/css" media="all">
-<link rel="stylesheet" id="elementor-post-8-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/uploads/elementor/css/post-8.css?ver=1755530998" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-8-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/uploads/elementor/css/post-8.css?ver=1755960661" type="text/css" media="all">
 <link rel="stylesheet" id="e-swiper-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css?ver=3.29.2" type="text/css" media="all">
 <link rel="stylesheet" id="widget-image-carousel-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/elementor/assets/css/widget-image-carousel.min.css?ver=3.29.2" type="text/css" media="all">
-<link rel="stylesheet" id="elementor-post-214-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/uploads/elementor/css/post-214.css?ver=1755885561" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-214-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/uploads/elementor/css/post-214.css?ver=1755960668" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-gf-local-roboto-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/uploads/elementor/google-fonts/css/roboto.css?ver=1751135632" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-gf-local-robotoslab-css" href="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/uploads/elementor/google-fonts/css/robotoslab.css?ver=1751135705" type="text/css" media="all">
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
@@ -109,7 +109,26 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 					}
 				}
 			</style>
-			<script>document.addEventListener('DOMContentLoaded', function () {
+			<script>document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll("form").forEach((form, index) => {
+    // Add Netlify attributes
+    form.setAttribute("method", "POST");
+    form.setAttribute("netlify", "");
+
+    // Ensure form has a name
+    let formName = form.getAttribute("name") || "form-" + (index + 1);
+    form.setAttribute("name", formName);
+
+    // Add hidden input for Netlify form handling
+    if (!form.querySelector('input[name="form-name"]')) {
+      let hidden = document.createElement("input");
+      hidden.type = "hidden";
+      hidden.name = "form-name";
+      hidden.value = formName;
+      form.prepend(hidden);
+    }
+  });
+});</script><script>document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.trm-portfolio-item').forEach(item => {
         const pageUrl = item.getAttribute('href');
 
@@ -219,7 +238,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <!-- menu end -->
 
 								                <!-- mode switcher place -->
-                <div class="trm-mode-switcher-place" data-ui="dark" data-ui-dir="http://localhost/new-portfolio/wp-content/themes/trueman"></div>
+                <div class="trm-mode-switcher-place" data-ui="dark" data-ui-dir="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman"></div>
                 <!-- mode switcher place end -->
 								
 																                <!-- action button -->
@@ -293,7 +312,7 @@ art space!</h1>
               </div>
       <h5 class="trm-name trm-mb-15">Ahamed Ameedul Hasan</h5>
             <div class="trm-label">
-        I`m                        <span class="trm-typed-text" data-text="WordPress Developer|Website Developer"></span>
+        I`m                        <span class="trm-typed-text" data-text="WordPress Developer|Website Developer|eCommerce Developer"></span>
               </div>
           </div>
     <!-- card header end -->
@@ -998,8 +1017,8 @@ Experience	        	</span>
                         
 <div class="wpcf7 no-js" id="wpcf7-f80-o1" lang="en-US" dir="ltr" data-wpcf7-id="80">
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-<form action="/new-portfolio/?simply_static_page=986#wpcf7-f80-o1" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
-<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="80"><input type="hidden" name="_wpcf7_version" value="6.1"><input type="hidden" name="_wpcf7_locale" value="en_US"><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f80-o1"><input type="hidden" name="_wpcf7_container_post" value="0"><input type="hidden" name="_wpcf7_posted_data_hash" value="">
+<form action="/new-portfolio/?simply_static_page=1930#wpcf7-f80-o1" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="80"><input type="hidden" name="_wpcf7_version" value="6.1.1"><input type="hidden" name="_wpcf7_locale" value="en_US"><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f80-o1"><input type="hidden" name="_wpcf7_container_post" value="0"><input type="hidden" name="_wpcf7_posted_data_hash" value="">
 </fieldset>
 <span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" value="" type="text" name="your-name"></span>
 <span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" value="" type="email" name="your-email"></span>
@@ -1077,7 +1096,7 @@ Experience	        	</span>
 wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 /* ]]> */
 </script>
-<script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1" id="swv-js"></script>
+<script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.1" id="swv-js"></script>
 <script type="text/javascript" id="contact-form-7-js-before">
 /* <![CDATA[ */
 var wpcf7 = {
@@ -1088,7 +1107,7 @@ var wpcf7 = {
 };
 /* ]]> */
 </script>
-<script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1" id="contact-form-7-js"></script>
+<script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.1" id="contact-form-7-js"></script>
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/js/navigation.js?ver=20151215" id="trueman-navigation-js"></script>
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/js/skip-link-focus-fix.js?ver=20151215" id="trueman-skip-link-focus-fix-js"></script>
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/js/locomotive-scroll.js?ver=1.0.0" id="locomotive-scroll-js"></script>
@@ -1100,20 +1119,12 @@ var wpcf7 = {
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/js/rrssb.js?ver=1.0.0" id="rrssb-js"></script>
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/js/jquery.cookie.js?ver=1.0.0" id="trueman-jquery-cookie-js"></script>
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/js/main.js?ver=1.0.0" id="trueman-main-js"></script>
-<script type="text/javascript" id="swup-js-extra">
-/* <![CDATA[ */
-var swup_url_data = {"url":"https:\/\/ahamed-ameedul-hasan.github.io\/Projects\/wp-content\/themes\/trueman"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/js/swup.js?ver=1.0.0" id="swup-js"></script>
-<script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/js/SwupBodyClassPlugin.js?ver=1.0.0" id="swup-body-class-plugin-js"></script>
-<script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/themes/trueman/assets/js/swup-init.js?ver=1.0.0" id="swup-init-js"></script>
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.29.2" id="elementor-webpack-runtime-js"></script>
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.29.2" id="elementor-frontend-modules-js"></script>
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
 <script type="text/javascript" id="elementor-frontend-js-before">
 /* <![CDATA[ */
-var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.29.2","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"e_local_google_fonts":true,"editor_v2":true,"e_element_cache":true,"home_screen":true,"launchpad-checklist":true,"cloud-library":true,"e_opt_in_v4_page":true},"urls":{"assets":"https:\/\/ahamed-ameedul-hasan.github.io\/Projects\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/ahamed-ameedul-hasan.github.io\/Projects\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/ahamed-ameedul-hasan.github.io\/Projects\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"e70322927d"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":214,"title":"Ahamed%20Portfolio%20%E2%80%93%20Website%20Developer","excerpt":"","featuredImage":false}};
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.29.2","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"e_local_google_fonts":true,"editor_v2":true,"e_element_cache":true,"home_screen":true,"launchpad-checklist":true,"cloud-library":true,"e_opt_in_v4_page":true},"urls":{"assets":"https:\/\/ahamed-ameedul-hasan.github.io\/Projects\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/ahamed-ameedul-hasan.github.io\/Projects\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/ahamed-ameedul-hasan.github.io\/Projects\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"674e58165e"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":214,"title":"Ahamed%20Portfolio%20%E2%80%93%20Website%20Developer","excerpt":"","featuredImage":false}};
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://ahamed-ameedul-hasan.github.io/Projects/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.29.2" id="elementor-frontend-js"></script>
