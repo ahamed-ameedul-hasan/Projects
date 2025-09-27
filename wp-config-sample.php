@@ -89,7 +89,8 @@ define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-
+define('WP_HOME','https://ahamed-projects.netlify.app');
+define('WP_SITEURL','https://ahamed-projects.netlify.app');
 
 /* That's all, stop editing! Happy publishing. */
 
